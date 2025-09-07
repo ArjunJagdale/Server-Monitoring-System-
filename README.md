@@ -2,6 +2,19 @@
 
 Oracle PL/SQL implementation of an enterprise-grade server monitoring solution with automated alerting and reporting capabilities.
 
+Here’s how you can embed your GitHub links as **Markdown code snippet links** for easy reference:
+
+---
+
+### 📄 Full Original Logs
+[View Full Original Logs](https://github.com/ArjunJagdale/Server-Monitoring-System-/blob/main/OriginalLogs.txt)
+
+### 💻 Complete PL/SQL File
+
+[View Oracle Performance Monitoring SQL](https://github.com/ArjunJagdale/Server-Monitoring-System-/blob/main/oracle_performance_monitoring.sql)
+
+---
+
 ## 📋 System Components
 
 ### **Database Objects**
