@@ -1,5 +1,38 @@
-# 📊 Complete Output with Oracle Live SQL
+# 🖥️ Server Performance Monitoring System
 
+Oracle PL/SQL implementation of an enterprise-grade server monitoring solution with automated alerting and reporting capabilities.
+
+## 📋 System Components
+
+### **Database Objects**
+- `performance_metrics` - Stores server performance data
+- `server_alerts` - Tracks threshold breach alerts
+
+### **PL/SQL Components**
+- **Procedures**: `log_server_metrics()`, `log_bulk_metrics()` - Metric logging
+- **Triggers**: `trg_performance_alert` - Auto-generates alerts on threshold breach
+- **Functions**: `get_server_health_status()`, `get_avg_metric_value()` - Health checks
+- **Cursors**: Complex reporting in `generate_daily_report()` - Daily performance analysis
+
+## 🚀 Key Features
+
+- **Real-time Monitoring**: Tracks CPU, Memory, Disk, Network metrics
+- **Automated Alerting**: Triggers fire on threshold violations (WARNING/CRITICAL)
+- **Health Assessment**: Functions provide server health status evaluation
+- **Daily Reporting**: Cursor-based reports with performance summaries
+- **Enterprise Scenarios**: Bulk logging, multi-server monitoring, alert management
+
+## ⚡ Demo Flow
+
+1. **Setup Tables** → Create monitoring infrastructure
+2. **Deploy Procedures** → Enable metric logging capabilities
+3. **Activate Triggers** → Auto-alert system on threshold breach
+4. **Install Functions** → Health check and analysis tools
+5. **Load Test Data** → Simulate real server metrics
+6. **Generate Reports** → Daily performance analysis with cursors
+7. **View Results** → Monitor alerts, health status, and trends
+
+## 📊 Complete output with screenshots
 ---
 
 ## STEP 1: CREATE TABLES FOR PERFORMANCE MONITORING
