@@ -1,0 +1,165 @@
+
+
+Table PERFORMANCE_METRICS created.
+
+Elapsed: 00:00:00.021
+
+
+Table SERVER_ALERTS created.
+
+Elapsed: 00:00:00.027
+
+
+Procedure LOG_SERVER_METRICS compiled
+
+Elapsed: 00:00:00.021
+
+
+Procedure LOG_BULK_METRICS compiled
+
+Elapsed: 00:00:00.026
+
+
+Trigger TRG_PERFORMANCE_ALERT compiled
+
+Elapsed: 00:00:00.023
+
+
+Function GET_SERVER_HEALTH_STATUS compiled
+
+Elapsed: 00:00:00.016
+
+
+Function GET_AVG_METRIC_VALUE compiled
+
+Elapsed: 00:00:00.011
+
+=== LOGGING SAMPLE PERFORMANCE METRICS ===
+🚨 ALERT GENERATED: WARNING: Server WEB-SERVER-01 CPU usage at 71.11% (Threshold: 80%)
+Metric logged: WEB-SERVER-01 - CPU = 71.11%
+🚨 ALERT GENERATED: CRITICAL ALERT: Server WEB-SERVER-01 MEMORY usage at 87.97% (Threshold: 85%)
+Metric logged: WEB-SERVER-01 - MEMORY = 87.97%
+Metric logged: WEB-SERVER-01 - DISK = 53.73%
+🚨 ALERT GENERATED: CRITICAL ALERT: Server WEB-SERVER-01 NETWORK usage at 79.23% (Threshold: 75%)
+Metric logged: WEB-SERVER-01 - NETWORK = 79.23%
+Bulk metrics logged for server: WEB-SERVER-01
+🚨 ALERT GENERATED: WARNING: Server DB-SERVER-01 CPU usage at 75.61% (Threshold: 80%)
+Metric logged: DB-SERVER-01 - CPU = 75.61%
+🚨 ALERT GENERATED: WARNING: Server DB-SERVER-01 MEMORY usage at 68.04% (Threshold: 85%)
+Metric logged: DB-SERVER-01 - MEMORY = 68.04%
+Metric logged: DB-SERVER-01 - DISK = 59.78%
+🚨 ALERT GENERATED: WARNING: Server DB-SERVER-01 NETWORK usage at 73.78% (Threshold: 75%)
+Metric logged: DB-SERVER-01 - NETWORK = 73.78%
+Bulk metrics logged for server: DB-SERVER-01
+Metric logged: APP-SERVER-01 - CPU = 61.77%
+🚨 ALERT GENERATED: CRITICAL ALERT: Server APP-SERVER-01 MEMORY usage at 88.6% (Threshold: 85%)
+Metric logged: APP-SERVER-01 - MEMORY = 88.6%
+🚨 ALERT GENERATED: WARNING: Server APP-SERVER-01 DISK usage at 73.59% (Threshold: 90%)
+Metric logged: APP-SERVER-01 - DISK = 73.59%
+Metric logged: APP-SERVER-01 - NETWORK = 43.72%
+Bulk metrics logged for server: APP-SERVER-01
+🚨 ALERT GENERATED: CRITICAL ALERT: Server WEB-SERVER-01 CPU usage at 92.5% (Threshold: 80%)
+Metric logged: WEB-SERVER-01 - CPU = 92.5%
+🚨 ALERT GENERATED: CRITICAL ALERT: Server DB-SERVER-01 MEMORY usage at 94.8% (Threshold: 85%)
+Metric logged: DB-SERVER-01 - MEMORY = 94.8%
+🚨 ALERT GENERATED: CRITICAL ALERT: Server APP-SERVER-01 DISK usage at 96.2% (Threshold: 90%)
+Metric logged: APP-SERVER-01 - DISK = 96.2%
+=== SAMPLE DATA INSERTION COMPLETED ===
+
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:00.833
+
+
+Procedure GENERATE_DAILY_REPORT compiled
+
+Elapsed: 00:00:00.031
+
+
+📊 ====== DAILY PERFORMANCE REPORT ======
+📅 Date: 07-SEP-2025
+
+🖥️  SERVER PERFORMANCE SUMMARY:
+--------------------------------------------------------------------------------
+Server: WEB-SERVER-01       Health: CRITICAL  Avg:   76.91 Peak:   92.50 Alerts: 4
+Server: APP-SERVER-01       Health: CRITICAL  Avg:   72.78 Peak:   96.20 Alerts: 3
+Server: DB-SERVER-01        Health: CRITICAL  Avg:   74.40 Peak:   94.80 Alerts: 4
+
+🚨 RECENT ALERTS:
+--------------------------------------------------------------------------------
+[16:46:55] CRITICAL: APP-SERVER-01 - CRITICAL ALERT: Server APP-SERVER-01 DISK usage at 96.2% (Threshold: 90%)
+[16:46:55] CRITICAL: DB-SERVER-01 - CRITICAL ALERT: Server DB-SERVER-01 MEMORY usage at 94.8% (Threshold: 85%)
+[16:46:55] CRITICAL: WEB-SERVER-01 - CRITICAL ALERT: Server WEB-SERVER-01 CPU usage at 92.5% (Threshold: 80%)
+[16:46:55] WARNING: APP-SERVER-01 - WARNING: Server APP-SERVER-01 DISK usage at 73.59% (Threshold: 90%)
+[16:46:55] CRITICAL: APP-SERVER-01 - CRITICAL ALERT: Server APP-SERVER-01 MEMORY usage at 88.6% (Threshold: 85%)
+[16:46:55] WARNING: DB-SERVER-01 - WARNING: Server DB-SERVER-01 NETWORK usage at 73.78% (Threshold: 75%)
+[16:46:55] WARNING: DB-SERVER-01 - WARNING: Server DB-SERVER-01 MEMORY usage at 68.04% (Threshold: 85%)
+[16:46:55] WARNING: DB-SERVER-01 - WARNING: Server DB-SERVER-01 CPU usage at 75.61% (Threshold: 80%)
+[16:46:55] CRITICAL: WEB-SERVER-01 - CRITICAL ALERT: Server WEB-SERVER-01 NETWORK usage at 79.23% (Threshold: 75%)
+[16:46:55] CRITICAL: WEB-SERVER-01 - CRITICAL ALERT: Server WEB-SERVER-01 MEMORY usage at 87.97% (Threshold: 85%)
+[16:46:55] WARNING: WEB-SERVER-01 - WARNING: Server WEB-SERVER-01 CPU usage at 71.11% (Threshold: 80%)
+
+✅ Report Generation Completed
+
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:00.035
+SERVER_NAME     ALERT_LEVEL METRIC_TYPE METRIC_VALUE ALERT_MESSAGE                                                                   ALERT_TIME        
+--------------- ----------- ----------- ------------ ------------------------------------------------------------------------------- ----------------- 
+APP-SERVER-01   CRITICAL    DISK        96.2         CRITICAL ALERT: Server APP-SERVER-01 DISK usage at 96.2% (Threshold: 90%)       07-SEP 16:46:55   
+DB-SERVER-01    CRITICAL    MEMORY      94.8         CRITICAL ALERT: Server DB-SERVER-01 MEMORY usage at 94.8% (Threshold: 85%)      07-SEP 16:46:55   
+WEB-SERVER-01   CRITICAL    CPU         92.5         CRITICAL ALERT: Server WEB-SERVER-01 CPU usage at 92.5% (Threshold: 80%)        07-SEP 16:46:55   
+APP-SERVER-01   WARNING     DISK        73.59        WARNING: Server APP-SERVER-01 DISK usage at 73.59% (Threshold: 90%)             07-SEP 16:46:55   
+APP-SERVER-01   CRITICAL    MEMORY      88.6         CRITICAL ALERT: Server APP-SERVER-01 MEMORY usage at 88.6% (Threshold: 85%)     07-SEP 16:46:55   
+DB-SERVER-01    WARNING     NETWORK     73.78        WARNING: Server DB-SERVER-01 NETWORK usage at 73.78% (Threshold: 75%)           07-SEP 16:46:55   
+DB-SERVER-01    WARNING     MEMORY      68.04        WARNING: Server DB-SERVER-01 MEMORY usage at 68.04% (Threshold: 85%)            07-SEP 16:46:55   
+DB-SERVER-01    WARNING     CPU         75.61        WARNING: Server DB-SERVER-01 CPU usage at 75.61% (Threshold: 80%)               07-SEP 16:46:55   
+WEB-SERVER-01   CRITICAL    NETWORK     79.23        CRITICAL ALERT: Server WEB-SERVER-01 NETWORK usage at 79.23% (Threshold: 75%)   07-SEP 16:46:55   
+WEB-SERVER-01   CRITICAL    MEMORY      87.97        CRITICAL ALERT: Server WEB-SERVER-01 MEMORY usage at 87.97% (Threshold: 85%)    07-SEP 16:46:55   
+WEB-SERVER-01   WARNING     CPU         71.11        WARNING: Server WEB-SERVER-01 CPU usage at 71.11% (Threshold: 80%)              07-SEP 16:46:55   
+
+Elapsed: 00:00:00.006
+11 rows selected. 
+
+METRIC                   VALUE 
+------------------------ ----- 
+Total Metrics Logged     15    
+Total Alerts Generated   11    
+Critical Alerts          6     
+Warning Alerts           5     
+
+Elapsed: 00:00:00.006
+4 rows selected. 
+
+
+
+🧪 TESTING ALERT SYSTEM WITH EXTREME VALUES:
+
+🚨 ALERT GENERATED: CRITICAL ALERT: Server PROD-SERVER-01 CPU usage at 98.7% (Threshold: 80%)
+Metric logged: PROD-SERVER-01 - CPU = 98.7%
+🚨 ALERT GENERATED: CRITICAL ALERT: Server PROD-SERVER-01 MEMORY usage at 99.2% (Threshold: 85%)
+Metric logged: PROD-SERVER-01 - MEMORY = 99.2%
+🚨 ALERT GENERATED: CRITICAL ALERT: Server PROD-SERVER-02 DISK usage at 97.5% (Threshold: 90%)
+Metric logged: PROD-SERVER-02 - DISK = 97.5%
+
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:00.012
+
+
+🧪 TESTING ALERT SYSTEM WITH EXTREME VALUES:
+
+🚨 ALERT GENERATED: CRITICAL ALERT: Server PROD-SERVER-01 CPU usage at 98.7% (Threshold: 80%)
+Metric logged: PROD-SERVER-01 - CPU = 98.7%
+🚨 ALERT GENERATED: CRITICAL ALERT: Server PROD-SERVER-01 MEMORY usage at 99.2% (Threshold: 85%)
+Metric logged: PROD-SERVER-01 - MEMORY = 99.2%
+🚨 ALERT GENERATED: CRITICAL ALERT: Server PROD-SERVER-02 DISK usage at 97.5% (Threshold: 90%)
+Metric logged: PROD-SERVER-02 - DISK = 97.5%
+
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:00.009
